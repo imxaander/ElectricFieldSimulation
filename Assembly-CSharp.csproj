@@ -67,6 +67,7 @@
     <Compile Include="Assets/Scripts/TestScript.cs" />
     <Compile Include="Assets/Scripts/FieldLinesSystem.cs" />
     <Compile Include="Assets/Scripts/ElectricField.cs" />
+    <Compile Include="Assets/Scripts/ChargedParticle.cs" />
     <Compile Include="Assets/Scripts/ConductivePaper.cs" />
   </ItemGroup>
   <ItemGroup>
