@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8825686726319379278}
   - component: {fileID: 8347246114998001100}
+  - component: {fileID: -6834051917107775762}
   m_Layer: 0
   m_Name: CHARGED_PARTICLE
   m_TagString: ChargedParticles
@@ -27,8 +28,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.409, y: 0, z: 1.462}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.49, y: 0.49, z: 0.49}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6397011398623977096}
   m_Father: {fileID: 0}
@@ -45,12 +46,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9408745542f7b9e2fb8e35d4472144e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charge: 1
-  isPositive: 1
+  charge: 0
   voltage: 5
   positiveChargeColor: {fileID: 2100000, guid: fd3ae105a7eb2474fac9281be2e53bda, type: 2}
   negativeChargeColor: {fileID: 2100000, guid: 584cf8e7ea6e03e5680f2ef18cfaafca, type: 2}
+  noChargeColor: {fileID: 2100000, guid: a3b2aba71277fb947a2f508cf82a7923, type: 2}
   Mesh3D: {fileID: 8350872766550289763}
+  conductivePaper: {fileID: 0}
+  charged: 0
+--- !u!135 &-6834051917107775762
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3728331973113516394}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.07
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7973556264674210416
 GameObject:
   m_ObjectHideFlags: 0
@@ -80,8 +104,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.09, y: 0.09, z: 0.09}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 8825686726319379278}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

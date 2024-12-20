@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ElectricField : MonoBehaviour
@@ -6,18 +7,23 @@ public class ElectricField : MonoBehaviour
     // Start is called before the first frame update
 
     public Vector2 electricField = new Vector2(0, 0);
+    public int electricFieldCount = 0;
     void Start()
     {
         
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        UpdateElectricField();
+        if(GameObject.FindGameObjectsWithTag("ChargedParticles").Length > electricFieldCount)
+        {
+            UpdateElectricField();
+            electricFieldCount = GameObject.FindGameObjectsWithTag("ChargedParticles").Length;
+        };
     }
 
-    void UpdateElectricField(){
+    public void UpdateElectricField(){
         electricField = Vector2.zero;
         GameObject[] chargedParticles = GameObject.FindGameObjectsWithTag("ChargedParticles");
         foreach(GameObject chargedParticle in chargedParticles){
@@ -30,7 +36,6 @@ public class ElectricField : MonoBehaviour
         }
     }
 
-
     void UpdateVectorRotation(){
         float angle = Mathf.Atan2(electricField.y, electricField.x) * Mathf.Rad2Deg;
         this.transform.rotation = Quaternion.Euler(new Vector3(0, angle, 0));
@@ -40,4 +45,6 @@ public class ElectricField : MonoBehaviour
         Vector2 eField = (COULOMB_CONSTANT * charge / Mathf.Pow(r, 3)) * rVector;
         return eField;
     }
+
+
 }
